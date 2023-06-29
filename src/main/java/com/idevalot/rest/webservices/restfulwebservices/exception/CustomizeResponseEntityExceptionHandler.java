@@ -1,6 +1,5 @@
 package com.idevalot.rest.webservices.restfulwebservices.exception;
 
-import java.net.http.HttpHeaders;
 import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
@@ -43,7 +42,8 @@ public class CustomizeResponseEntityExceptionHandler extends ResponseEntityExcep
 			org.springframework.http.HttpHeaders headers, HttpStatusCode status, WebRequest request) {
 
 		ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
-				"Total Errors : " + ex.getErrorCount() + ", First Errors : " + ex.getFieldError().getDefaultMessage(), request.getDescription(false));
+				"Total Errors : " + ex.getErrorCount() + ", First Errors : " + ex.getFieldError().getDefaultMessage(),
+				request.getDescription(false));
 
 		return new ResponseEntity(errorDetails, HttpStatus.BAD_REQUEST);
 	}
