@@ -4,9 +4,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -23,19 +20,19 @@ public class User {
 
 	@Id
 	@GeneratedValue
-	@JsonIgnore
+//	@JsonIgnore
 	private Integer id;
 
 	@Size(min = 2, message = "Name should have atleast 2 characters")
-	@JsonProperty("user_name")
+//	@JsonProperty("user_name")
 	private String name;
 
 	@Past(message = "Birth date should be in the past")
-	@JsonProperty("birth_date")
+//	@JsonProperty("birth_date")
 	private LocalDate birthDate;
 	
 	@OneToMany(mappedBy = "user")
-//	@JsonIgnore
+	@JsonIgnore
 	private List<Post> posts;
 	
 
