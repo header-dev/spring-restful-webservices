@@ -8,8 +8,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.mysql.cj.Session;
-
 @Configuration
 public class BasicAuthenticationSecurityConfiguration {
 
@@ -30,5 +28,5 @@ public class BasicAuthenticationSecurityConfiguration {
 
 		return http.build();
 	}
-
+ 
 }
